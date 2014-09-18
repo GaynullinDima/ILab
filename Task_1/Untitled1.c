@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-main()
+double main(void)
 {
 	double a, b, c, d;
 	int sol_count;
@@ -45,4 +45,5 @@ main()
 	}
 
 	printf("%d %lg %lg", sol_count, x[0], x[1]);
+	return(0);
 }
