@@ -1,3 +1,3 @@
 ILab
 ====
-Mentor: Gusarov Aleksei (Thar0L
+Mentor: Gusarov Aleksei (Thar0l)
