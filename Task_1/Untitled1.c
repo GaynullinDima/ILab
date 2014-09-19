@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <math.h>
 
-double main(void)
+main()
 {
-	double a, b, c, d;
+	double a = 0, b = 0, c = 0, d = 0;
 	int sol_count;
-	double x[1];
+	double x[2];
 
 
 	printf("A=");
@@ -19,15 +19,20 @@ double main(void)
 
 	sol_count = 2;
 	for(i = 0; i < 2; i++)
-	 x[i] = 0;
+	    x[i] = 0;
 
 
 	if (a == 0) {
-	  if (b != 0) {
-	  sol_count = 1;
-	  x[0] =  c / b;
-	  }
-	  else sol_count = 0;
+        if (b != 0) {
+            sol_count = 1;
+            x[0] =  (-c) / b;
+        }
+        else
+        if (c == 0) {
+            printf ("infinite number of solutions");
+            exit(1);
+        }
+        else sol_count = 0;
 	}
 
 	else {
@@ -44,6 +49,7 @@ double main(void)
 	  }
 	}
 
-	printf("%d %lg %lg", sol_count, x[0], x[1]);
-	return(0);
+	if (sol_count = 0) printf("%d", sol_count);
+	else if (sol_count = 1) printf ("%d %lf", sol_count, x[0]);
+	else printf("%d %lf %lf", sol_count, x[0], x[1]);
 }
