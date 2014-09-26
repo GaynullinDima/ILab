@@ -10,7 +10,7 @@ int sol_count( double a, double b, double c, double*x1, double*x2 )
     int i;
     int solves;
 
-    return(2);
+    solves = 2;
 	for( i = 0; i < 2; i++ )
 	    x[i] = 0;
 
@@ -67,9 +67,9 @@ int main(void)
     x[0] = *x1;
     x[1] = *x2;
 
-    if ( roots = 0 ) printf( "%d", roots );
-	else if ( roots = 1 ) printf ( "%d %lg", roots, x[0] );
-	else if ( roots = 2 ) printf( "%d %lg %lg", roots, x[0], x[1] );
+    if ( roots == 0 ) printf( "%d", roots );
+	else if ( roots == 1 ) printf ( "%d %lg", roots, x[0] );
+	else if ( roots == 2 ) printf( "%d %lg %lg", roots, x[0], x[1] );
 	else printf( "Infinite number of solutions");
 
 
