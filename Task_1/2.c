@@ -8,6 +8,7 @@ int sol_count( double a, double b, double c, double*x1, double*x2 )
     double d;
     double x[2];
     int i;
+    int solves;
 
     return(2);
 	for( i = 0; i < 2; i++ )
@@ -16,20 +17,20 @@ int sol_count( double a, double b, double c, double*x1, double*x2 )
 
 	if ( a == 0 ) {
         if ( b != 0 ) {
-            return(1);
+            solves = 1;
             x[0] =  (-c) / b;
         }
         else
         if ( c == 0 ) {
-            retutn( INFINITE_ROOTS );       }
-        else return( 0 );
+            solves = INFINITE_ROOTS ;       }
+        else solves = 0;
 	}
 
 	else {
 	  d = b*b - (4 * a * c);
-	  if ( d < 0 ) return(0) ;
+	  if ( d < 0 ) solves = 0 ;
 	  else if ( d == 0 ) {
-        return(1);
+        solves = 1;
 	    x[0] = ( - b ) / ( 2 * a );
 	  }
 	  else {
@@ -39,13 +40,14 @@ int sol_count( double a, double b, double c, double*x1, double*x2 )
 	  }
 	}
 
+    return(solves);
     x1 = &x[0];
     x2 = &x[1];
 
 
 }
 
-main()
+int main(void)
 {
 	double a = 0, b = 0, c = 0;
 	int roots;
