@@ -5,21 +5,12 @@ void push( list* stack, int value )
 {
 	// if stack is empty, you should reset pointer
 
-	if (stack == NULL)
-	{
-		stack = ( list* )calloc( 1, sizeof ( list ) );
-		stack -> next = NULL;
-		stack -> data = value;
-	}
-	else
-	{
 		list* temp;
 		temp = stack;
 		stack = ( list* )calloc( 1, sizeof ( list ) );
 		stack -> data = value;
 		stack -> next = temp;
 		free(temp);
-	}
 };
 
 int pop( list* stack )
@@ -28,45 +19,35 @@ int pop( list* stack )
 	list* temp;
 	if ( stack == NULL )
 		return( stack_is_empty );
-	else
-	{
-		top_elem = stack -> value;
-		stack == stack -> next;
-		return( top_elem );
-	}
+	top_elem = stack -> value;
+	stack = stack -> next;
+	return( top_elem );
+
 };
 
 bool is_empty( list* stack )
 {
 	if ( stack == NULL )
 		return true;
-	else
 		return false;
 };
 
 int get_count( list* stack )
 {
-	list* temp1;
-	list* temp2;
-	int count = 0;
-	temp1 = stack;
-	temp2 = stack -> next;
+	if (stack == NULL) return 0;
 
-	if (temp1 == NULL)
-		return(0);
-	else
+	list* temp;
+	temp = stack;
+	int count = 1;
+
+	while (temp -> next != NULL )
 	{
-		while (temp2 != NULL)
-		{
-			temp1 = temp2;
-			count++;
-			temp2 = temp1 -> next;
-		}
+		temp = temp -> next; 
 		count++;
-		return(count);
 	}
-	free(temp1);
-	free(temp2);
+	free(temp);
+	return count;
+
 };
 
 void clear(list* stack)
