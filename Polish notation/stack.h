@@ -7,15 +7,15 @@
 
 struct List
 {
-	int value;
+	double value;
 	struct List* next;
 };
 
 bool isEmpty(struct List* stack);
 
-struct List* Push(struct List* stack, int i);
+struct List* Push(struct List* stack, double i);
 
-int Pop(struct List** stack);
+double Pop(struct List** stack);
 
 int getCount(struct List* stack);
 

@@ -9,7 +9,7 @@ bool isEmpty(struct List* stack)
 };
 
 
-struct List* Push(struct List* stack, int i)
+struct List* Push(struct List* stack, double i)
 {
 
 	struct List* temp = stack;
@@ -24,9 +24,9 @@ struct List* Push(struct List* stack, int i)
 
 };
 
-int Pop(struct List** stack)
+double Pop(struct List** stack)
 {
-	int pop;
+	double pop;
 
 	struct List* temp = *stack;
 
@@ -53,7 +53,7 @@ int getCount(struct List* stack)
 		stack = stack->next;
 
 		count++;
-	}
+	};
 
 	return count;
 };
