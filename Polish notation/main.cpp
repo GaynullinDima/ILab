@@ -17,12 +17,15 @@ int main()
 			while (c != ' ')
 			{
 				isPoint = (isPoint || (c == '.'));
-				if (c != '.') {
-					if (isPoint) {
+				if (c != '.')
+				{
+					if (isPoint) 
+					{
 						value = value + ((c - '0') * pow);
 						pow = pow * 0.1;
 					}
-					else {
+					else 
+					{
 						value = value * 10;
 						value = value + (c - '0');
 					}
