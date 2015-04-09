@@ -1,0 +1,50 @@
+psh 1
+mvs AX
+pop
+psh -2
+mvs BX
+pop
+psh 1
+mvs CX
+msv AX
+psh 4
+mul
+mul
+mvs DX
+pop
+msv BX
+msv BX
+mul
+msv DX
+sub
+mvs DX
+psh 0
+cmp
+jml null
+psh 0
+msv BX
+sub
+psh 2
+msv AX
+mul
+div
+mvs CX
+pop
+msv DX
+sqr
+mvs DX
+psh 2
+msv AX
+mul 
+div
+mvs BX
+pop
+msv CX
+msv BX
+sub
+msv BX
+msv CX
+add
+null
+psh 0
+end
